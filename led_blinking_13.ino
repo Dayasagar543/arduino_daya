@@ -1,8 +1,9 @@
 // C++ code
 //
+int pin = 11;
 void setup()
 {
-    pinMode(LED_BUILTIN, OUTPUT);
+    pinMode(pin, OUTPUT);
 }
 
 void loop()
