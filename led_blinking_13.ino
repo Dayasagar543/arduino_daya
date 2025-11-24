@@ -1,6 +1,6 @@
 // C++ code
 //
-int pin = 11;
+int pin = 13;
 void setup()
 {
     pinMode(pin, OUTPUT);
