@@ -5,7 +5,8 @@ import numpy as np
 
 time.sleep(1)
 #arduino object
-arduino_Data=serial.Serial("COM4",9600)
+# arduino_Data=serial.Serial("COM4",9600)
+arduino_Data=serial.Serial("COM3",9600)
 
 #null dimentions or position
 origin=0
