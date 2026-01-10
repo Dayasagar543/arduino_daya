@@ -20,11 +20,11 @@ void loop()
     temperaturec = dht.readTemperature();
     temperaturef = dht.readTemperature(true);
     humidity = dht.readHumidity();
-    Serial.print("the temperature in centigrade  is ");
+    Serial.print("the temperature in centigrade is ");
     Serial.print(temperaturec);
-    Serial.print("the temperature in farenite  is ");
+    Serial.print(" the temperature in farenite is ");
     Serial.print(temperaturef);
-    Serial.print(" the  humidity  is ");
+    Serial.print(" the humidity is ");
     Serial.print(humidity);
     Serial.println();
 }
