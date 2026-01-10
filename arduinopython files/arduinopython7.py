@@ -27,8 +27,8 @@ inner_cylinder_radius=.3
 axis_value=1
 ypos=0.0
 outer_cylinder=cylinder(pos=vector(origin,ypos,origin),color=color.white,length=cylinder_length,radius=outer_cylinder_radius,axis=vector(origin,axis_value,origin),opacity=opacity)
-temperature_thermo=1
 
+temperature_thermo=1
 thermo_cylinder=cylinder(pos=vector(origin,ypos,origin),color=color.red,length=temperature_thermo,radius=inner_cylinder_radius,axis=vector(origin,axis_value,origin))
 time.sleep(1)
 while True :
@@ -38,11 +38,28 @@ while True :
     data_packet = data_packet.decode('utf-8', errors='ignore')
     data_packet=data_packet.strip("\r\n")
     data_packet=data_packet.split(" ")
+    
+    # print(data_packet) 
+    print(data_packet)
+    
+    # reading the temperature for the string and typecasting the numerical values to float
+    temperature_thermo=1                                                                                        
     temperature_c=data_packet[5]
-    print(data_packet)                                                                                         
-    temperature_thermo=float(temperature_c)
+    temperature_c=float(temperature_c)
     temperature_f=float(data_packet[11])
     humidity=float(data_packet[15])
-    print("the temperature is centigrade is "+temperature_c)
-    print("the temperature is farenite is "+ str(temperature_f))
-    print("the humidity is "+str(humidity))
+    
+    #input temperature formual for temperature reading
+    input_temperature=(5/115)*temperature_f+1
+    input_temperature=round(input_temperature,2)
+    # print(input_temperature)
+    thermo_cylinder.length=input_temperature
+    thermo_cylinder.length=round(thermo_cylinder.length,2)
+    # print(thermo_cylinder.length)
+    
+    
+    #printing the value of the serial data
+    # print("the temperature is centigrade is "+temperature_c)
+    # print("the temperature is farenite is "+ str(temperature_f))
+    # print("the humidity is "+str(humidity))
+   
