@@ -32,7 +32,15 @@ outer_cylinder=cylinder(pos=vector(origin,ypos,origin),color=color.white,length=
 
 temperature_thermo=0.1
 thermo_cylinder=cylinder(pos=vector(origin,ypos,origin),color=color.red,length=temperature_thermo,radius=inner_cylinder_radius,axis=vector(origin,axis_value,origin))
- 
+
+#segements temperature
+for temp in range(0,115,10):
+    tick_pos=(5/115)*temp+1
+    tick_disc=cylinder(color=color.yellow,radius=.4,length=.1,pos=vector(origin,tick_pos+ypos,origin),axis=vector(origin,true,origin))
+    temp_label=text(text=str(temp),color=color.cyan,pos=vector(-2,tick_pos+ypos,origin),height=.3)
+    
+#temperature label
+temperature_variable_label=label(text="50",height=20,box=False,color=color.white,pos=vector(origin,ypos,origin))  
     
 time.sleep(1)
 while True :
@@ -63,7 +71,8 @@ while True :
             input_temperature=round(input_temperature,2)
             # print(input_temperature)
             thermo_cylinder.length=input_temperature
-            # print(thermo_cylinder.length
+            # print(thermo_cylinder.length)
+            temperature_variable_label.text=temperature_f
             
             
             #printing the value of the serial data
