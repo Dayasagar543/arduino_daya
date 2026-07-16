@@ -43,7 +43,8 @@ int leftBoost = 255;
 int rightBoost = 255;
 
 // Modes
-enum Mode {
+enum Mode
+{
   MANUAL,
   OBSTACLE,
   FOLLOW
@@ -55,7 +56,8 @@ unsigned long lastScanTime = 0;
 unsigned long lastFollowTime = 0;
 int LeftDist = 0, rightDist = 0;
 
-long getDistance() {
+long getDistance()
+{
   digitalWrite(TRIG, LOW);
   delayMicroseconds(2);
   digitalWrite(TRIG, HIGH);
@@ -68,22 +70,25 @@ long getDistance() {
   return duration * 0.034 / 2;
 }
 
-void setLeft(int spd) {
+void setLeft(int spd)
+{
   ledcWrite(ENA, spd);
 }
-void setRight(int spd) {
+void setRight(int spd)
+{
   ledcWrite(ENB, spd);
 }
 
-void kickStart() {
-  setRight(rightBoost);
-  setLeft(leftBoost);
-  delay(300);  // boosting intially
-  setLeft(baseSpeed);
-  setRight(baseSpeed);
-}
+// void kickStart() {
+//   setRight(rightBoost);
+//   setLeft(leftBoost);
+//   // delay(300);  // boosting intially
+//   setLeft(baseSpeed);
+//   setRight(baseSpeed);
+// }
 
-void stopMotors() {
+void stopMotors()
+{
   setLeft(0);
   setRight(0);
   digitalWrite(IN1, LOW);
@@ -91,43 +96,57 @@ void stopMotors() {
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, LOW);
 }
-void forward() {
-  kickStart();
+void forward()
+{
+  // kickStart();
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
   digitalWrite(IN3, HIGH);
   digitalWrite(IN4, LOW);
+  setLeft(baseSpeed);  // ADD THIS: Apply power to Left wheel
+  setRight(baseSpeed); // ADD THIS: Apply power to Right wheel
 }
-void backward() {
-  kickStart();
+void backward()
+{
+  // kickStart();
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, HIGH);
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, HIGH);
+  setLeft(baseSpeed);  // ADD THIS: Apply power to Left wheel
+  setRight(baseSpeed); // ADD THIS: Apply power to Right wheel
 }
-void Left() {
+void Left()
+{
 
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, HIGH);
+  setLeft(baseSpeed);  // ADD THIS: Apply power to Left wheel
+  setRight(baseSpeed); // ADD THIS: Apply power to Right wheel
 }
-void Right() {
+void Right()
+{
 
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, HIGH);
   digitalWrite(IN3, HIGH);
   digitalWrite(IN4, LOW);
+  setLeft(baseSpeed);  // ADD THIS: Apply power to Left wheel
+  setRight(baseSpeed); // ADD THIS: Apply power to Right wheel
 }
 
-void obstacleMode() {
+void obstacleMode()
+{
   // prevent spamming the sensor
   if (millis() - lastScanTime < 60)
     return;
   lastScanTime = millis();
 
   int front = getDistance();
-  if (front > 0 && front < 25) {
+  if (front > 0 && front < 25)
+  {
     // stops and moves back slightly
     stopMotors();
     delay(200);
@@ -138,7 +157,7 @@ void obstacleMode() {
 
     // looking left
     scanServo.write(170);
-    delay(500);  // wait for servo to get there
+    delay(500); // wait for servo to get there
     long leftDist = getDistance();
     // looking Right
     scanServo.write(10);
@@ -149,23 +168,29 @@ void obstacleMode() {
     delay(300);
 
     // make a decision
-    if (leftDist >= rightDist) {
+    if (leftDist >= rightDist)
+    {
       Left();
       delay(400);
-    } else {
+    }
+    else
+    {
       Right();
       delay(400);
     }
 
     stopMotors();
     delay(200);
-  } else {
+  }
+  else
+  {
     // path is clear
     forward();
   }
 }
 
-void followMode() {
+void followMode()
+{
   if (millis() - lastFollowTime < 60)
     return;
   lastFollowTime = millis();
@@ -174,32 +199,40 @@ void followMode() {
 
   // out of range or lost target
 
-  if (distance < 0 || distance > 30) {
+  if (distance < 0 || distance > 30)
+  {
     stopMotors();
-  }  // Too close ! Back up
-  else if (distance < 12) {
+  } // Too close ! Back up
+  else if (distance < 12)
+  {
     backward();
-  }  // perfect distance , just stop and wait
-  else if (distance >= 12 && distance <= 20) {
+  } // perfect distance , just stop and wait
+  else if (distance >= 12 && distance <= 20)
+  {
     stopMotors();
-  }  // target is moving away  follow it
-  else if (distance > 20 && distance <= 30) {
+  } // target is moving away  follow it
+  else if (distance > 20 && distance <= 30)
+  {
     forward();
   }
 }
 
 ///----------------APP Handlers--------
 
-void handleSpecialMode() {
+void handleSpecialMode()
+{
   String path = server.uri();
   String level = server.arg("level");
 
-  if (level == "1") {
+  if (level == "1")
+  {
     if (path == "/avoid")
       currentMode = OBSTACLE;
     else if (path == "/follow")
       currentMode = FOLLOW;
-  } else {
+  }
+  else
+  {
     // if elve is 0, rever back to manual control and stop
     currentMode = MANUAL;
     stopMotors();
@@ -214,7 +247,8 @@ void handleSpecialMode() {
   server.send(200, "text/plain", "OK");
 }
 
-void setup() {
+void setup()
+{
   // put your setup code here, to run once:
   Serial.begin(115200);
   pinMode(IN1, OUTPUT);
@@ -236,39 +270,37 @@ void setup() {
   WiFi.softAP(ssid, password);
   WiFi.setSleep(false);
 
-
   Serial.print("AP IP Address: ");
-  Serial.println(WiFi.softAPIP());  // Usually prints 192.168.4.1
+  Serial.println(WiFi.softAPIP()); // Usually prints 192.168.4.1
 
-  // way Manual directions
-
-  server.on("/f", []() {
+  // Way Manual directions with structural string responses
+  server.on("/f", []()
+            {
     currentMode = MANUAL;
     forward();
-    server.send(200);
-  });
-  server.on("/b", []() {
+    server.send(200, "text/plain", "Moving Forward"); });
+  server.on("/b", []()
+            {
     currentMode = MANUAL;
     backward();
-    server.send(200);
-  });
-  server.on("/s", []() {
+    server.send(200, "text/plain", "Moving Backward"); });
+  server.on("/s", []()
+            {
     currentMode = MANUAL;
     stopMotors();
-    server.send(200);
-  });
+    server.send(200, "text/plain", "Stopped"); });
 
-  // soft turns (Diagonals)
-  server.on("/l", []() {
+  // Soft turns (Diagonals)
+  server.on("/l", []()
+            {
     currentMode = MANUAL;
     Left();
-    server.send(200);
-  });
-  server.on("/r", []() {
+    server.send(200, "text/plain", "Turning Left"); });
+  server.on("/r", []()
+            {
     currentMode = MANUAL;
     Right();
-    server.send(200);
-  });
+    server.send(200, "text/plain", "Turning Right"); });
 
   // special functions
   server.on("/horn", handleSpecialMode);
@@ -279,7 +311,8 @@ void setup() {
   Serial.println("Server started !!");
 }
 
-void loop() {
+void loop()
+{
   // put your main code here, to run repeatedly:
   server.handleClient();
   yield();
