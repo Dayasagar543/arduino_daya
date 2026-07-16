@@ -72,11 +72,11 @@ long getDistance()
 
 void setLeft(int spd)
 {
-  ledcWrite(ENA, spd);
+  ledcAttachChannel(ENA, 1000, 8, 0);
 }
 void setRight(int spd)
 {
-  ledcWrite(ENB, spd);
+  ledcAttachChannel(ENB, 1000, 8, 1);
 }
 
 // void kickStart() {
@@ -157,15 +157,15 @@ void obstacleMode()
 
     // looking left
     scanServo.write(170);
-    delay(500); // wait for servo to get there
+    delay(100); // wait for servo to get there
     long leftDist = getDistance();
     // looking Right
     scanServo.write(10);
-    delay(500);
+    delay(100);
     long rightDist = getDistance();
     // center Servo
     scanServo.write(90);
-    delay(300);
+    delay(200);
 
     // make a decision
     if (leftDist >= rightDist)
@@ -277,17 +277,20 @@ void setup()
   server.on("/f", []()
             {
     currentMode = MANUAL;
+    Serial.print("forward triggered");
     forward();
     server.send(200, "text/plain", "Moving Forward"); });
   server.on("/b", []()
             {
     currentMode = MANUAL;
     backward();
+    Serial.print("back triggered");
     server.send(200, "text/plain", "Moving Backward"); });
   server.on("/s", []()
             {
     currentMode = MANUAL;
     stopMotors();
+    Serial.print("stop triggered");
     server.send(200, "text/plain", "Stopped"); });
 
   // Soft turns (Diagonals)
@@ -295,11 +298,13 @@ void setup()
             {
     currentMode = MANUAL;
     Left();
+    Serial.print("left triggered");
     server.send(200, "text/plain", "Turning Left"); });
   server.on("/r", []()
             {
     currentMode = MANUAL;
     Right();
+    Serial.print("right triggered");
     server.send(200, "text/plain", "Turning Right"); });
 
   // special functions
