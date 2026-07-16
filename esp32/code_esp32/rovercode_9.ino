@@ -1,5 +1,19 @@
+#include <WiFi.h>
+#include <WiFiAP.h>
+#include <WiFiClient.h>
+#include <WiFiGeneric.h>
+#include <WiFiMulti.h>
+#include <WiFiSTA.h>
+#include <WiFiScan.h>
+#include <WiFiServer.h>
+#include <WiFiType.h>
+#include <WiFiUdp.h>
+
+#include <HTTP_Method.h>
+#include <Middlewares.h>
+#include <Uri.h>
+#include <WebServer.h>
 #include <esp_wifi.h>
-#include <webServer.h>
 #include <ESP32Servo.h>
 
 const char* ssid = "rover";
@@ -9,18 +23,18 @@ WebServer server(80);
 Servo scanServo;
 
 //Motor pins
-#define IN1 14;
-#define IN2 27;
-#define IN1 26;
-#define IN1 25;
-#define IN1 33;
-#define IN1 32;
+#define IN1 14
+#define IN2 27
+#define IN3 26
+#define IN4 25
+#define ENA 33
+#define ENB 32
 
 //ultrasonic
 
-#define TRIG 19;
-#define ECHO 18;
-#define SERVO_PIN 21;
+#define TRIG 19
+#define ECHO 18
+#define SERVO_PIN 21
 
 //CALIBRATION
 
@@ -33,7 +47,7 @@ enum Mode { MANUAL,
             OBSTACLE,
             FOLLOW };
 
-MODE currentMode = MANUAL;
+Mode currentMode = MANUAL;
 
 unsigned long lastScanTime = 0;
 unsigned long lastFollowTime = 0;
@@ -46,7 +60,7 @@ long getDistance() {
   delayMicroseconds(10);
   digitalWrite(TRIG, LOW);
 
-  long duration = pulseIN(ECHO, HIGH, 15000);
+  long duration = pulseIn(ECHO, HIGH, 15000);
   if (duration == 0) return 400;
   return duration * 0.034 / 2;
 }
@@ -76,28 +90,28 @@ void stopMotors() {
   digitalWrite(IN4, LOW);
 }
 void forward() {
-  kickstart();
+  kickStart();
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
   digitalWrite(IN3, HIGH);
   digitalWrite(IN4, LOW);
 }
 void backward() {
-  kickstart();
+  kickStart();
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, HIGH);
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, HIGH);
 }
 void Left() {
-  kickstart();
+  kickStart();
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, HIGH);
 }
 void Right() {
-  kickstart();
+  kickStart();
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, HIGH);
   digitalWrite(IN3, HIGH);
@@ -122,11 +136,11 @@ void obstacleMode() {
     //looking left
     scanServo.write(170);
     delay(500);  //wait for servo to get there
-    leftDist = getDistance();
+    long leftDist = getDistance();
     //looking Right
     scanServo.write(10);
     delay(500);
-    rightDist = getDistance();
+    long rightDist = getDistance();
     //center Servo
     scanServo.write(90);
     delay(300);
@@ -152,7 +166,7 @@ void followMode() {
   if (millis() - lastFollowTime < 60) return;
   lastFollowTime = millis();
 
-  int distance = getDistance();
+  long distance = getDistance();
 
   //out of range or lost target
 
@@ -162,7 +176,7 @@ void followMode() {
   else if (distance < 12) {
     backward();
   }  // perfect distance , just stop and wait
-  else if (disatance >= 12 && distance <= 20) {
+  else if (distance >= 12 && distance <= 20) {
     stopMotors();
   }  //target is moving away  follow it
   else if (distance > 20 && distance <= 30) {
@@ -174,7 +188,7 @@ void followMode() {
 
 void handleSpecialMode() {
   String path = server.uri();
-  String path = server.arg("level");
+  String level = server.arg("level");
 
   if (level == "1") {
     if (path == "/avoid") currentMode = OBSTACLE;
@@ -191,7 +205,7 @@ void handleSpecialMode() {
   Serial.print(path);
   Serial.print(" | Level: ");
   Serial.print(level);
-  Server.send(200, "text/plain", "OK");
+  server.send(200, "text/plain", "OK");
 }
 
 void setup() {
@@ -202,21 +216,20 @@ void setup() {
   pinMode(IN3, OUTPUT);
   pinMode(IN4, OUTPUT);
 
-  ledcSetup(0, 1000, 8);
-  ledcAttachPin(ENA, 0);
-  ledcSetup(1, 1000, 8);
-  ledcAttachPin(ENB, 1);
+  ledcAttach(ENA, 1000, 8);
+  ledcAttach(ENB, 1000, 8);
+
 
   pinMode(TRIG, OUTPUT);
   pinMode(ECHO, INPUT);
 
   ESP32PWM::allocateTimer(2);
-  scanServo.SetPeriodHertz(50);
+  scanServo.setPeriodHertz(50);
   scanServo.attach(SERVO_PIN, 500, 2400);
   scanServo.write(90);
 
-  Wifi.softAP(ssid, password);
-  Wifi.setSleep(false);
+  WiFi.softAP(ssid, password);
+  WiFi.setSleep(false);
 
   // way Manual directions
 
@@ -259,7 +272,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  Server.handleClient();
+  server.handleClient();
   yield();
 
   if (currentMode == OBSTACLE) obstacleMode();
