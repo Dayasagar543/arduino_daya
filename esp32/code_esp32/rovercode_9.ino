@@ -16,13 +16,13 @@
 #include <esp_wifi.h>
 #include <ESP32Servo.h>
 
-const char* ssid = "rover";
-const char* password = "12345";
+const char *ssid = "rover";
+const char *password = "12345";
 
 WebServer server(80);
 Servo scanServo;
 
-//Motor pins
+// Motor pins
 #define IN1 14
 #define IN2 27
 #define IN3 26
@@ -30,22 +30,25 @@ Servo scanServo;
 #define ENA 33
 #define ENB 32
 
-//ultrasonic
+// ultrasonic
 
 #define TRIG 19
 #define ECHO 18
 #define SERVO_PIN 21
 
-//CALIBRATION
+// CALIBRATION
 
 int baseSpeed = 200;
 int leftBoost = 255;
 int rightBoost = 255;
 
-//Modes
-enum Mode { MANUAL,
-            OBSTACLE,
-            FOLLOW };
+// Modes
+enum Mode
+{
+  MANUAL,
+  OBSTACLE,
+  FOLLOW
+};
 
 Mode currentMode = MANUAL;
 
@@ -53,7 +56,8 @@ unsigned long lastScanTime = 0;
 unsigned long lastFollowTime = 0;
 int LeftDist = 0, rightDist = 0;
 
-long getDistance() {
+long getDistance()
+{
   digitalWrite(TRIG, LOW);
   delayMicroseconds(2);
   digitalWrite(TRIG, HIGH);
@@ -61,27 +65,31 @@ long getDistance() {
   digitalWrite(TRIG, LOW);
 
   long duration = pulseIn(ECHO, HIGH, 15000);
-  if (duration == 0) return 400;
+  if (duration == 0)
+    return 400;
   return duration * 0.034 / 2;
 }
 
-
-void setLeft(int spd) {
+void setLeft(int spd)
+{
   ledcWrite(0, spd);
 }
-void setRight(int spd) {
+void setRight(int spd)
+{
   ledcWrite(1, spd);
 }
 
-void kickStart() {
+void kickStart()
+{
   setRight(rightBoost);
   setLeft(leftBoost);
-  delay(300);  //boosting intially
+  delay(300); // boosting intially
   setLeft(baseSpeed);
   setRight(baseSpeed);
 }
 
-void stopMotors() {
+void stopMotors()
+{
   setLeft(0);
   setRight(0);
   digitalWrite(IN1, LOW);
@@ -89,28 +97,32 @@ void stopMotors() {
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, LOW);
 }
-void forward() {
+void forward()
+{
   kickStart();
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
   digitalWrite(IN3, HIGH);
   digitalWrite(IN4, LOW);
 }
-void backward() {
+void backward()
+{
   kickStart();
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, HIGH);
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, HIGH);
 }
-void Left() {
+void Left()
+{
   kickStart();
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, HIGH);
 }
-void Right() {
+void Right()
+{
   kickStart();
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, HIGH);
@@ -118,14 +130,17 @@ void Right() {
   digitalWrite(IN4, LOW);
 }
 
-void obstacleMode() {
-  //prevent spamming the sensor
-  if (millis() - lastScanTime < 60) return;
+void obstacleMode()
+{
+  // prevent spamming the sensor
+  if (millis() - lastScanTime < 60)
+    return;
   lastScanTime = millis();
 
   int front = getDistance();
-  if (front > 0 && front < 25) {
-    //stops and moves back slightly
+  if (front > 0 && front < 25)
+  {
+    // stops and moves back slightly
     stopMotors();
     delay(200);
     backward();
@@ -133,73 +148,90 @@ void obstacleMode() {
     stopMotors();
     delay(200);
 
-    //looking left
+    // looking left
     scanServo.write(170);
-    delay(500);  //wait for servo to get there
+    delay(500); // wait for servo to get there
     long leftDist = getDistance();
-    //looking Right
+    // looking Right
     scanServo.write(10);
     delay(500);
     long rightDist = getDistance();
-    //center Servo
+    // center Servo
     scanServo.write(90);
     delay(300);
 
-    //make a decision
-    if (leftDist >= rightDist) {
+    // make a decision
+    if (leftDist >= rightDist)
+    {
       Left();
       delay(400);
-    } else {
+    }
+    else
+    {
       Right();
       delay(400);
     }
 
     stopMotors();
     delay(200);
-  } else {
+  }
+  else
+  {
     // path is clear
     forward();
   }
 }
 
-void followMode() {
-  if (millis() - lastFollowTime < 60) return;
+void followMode()
+{
+  if (millis() - lastFollowTime < 60)
+    return;
   lastFollowTime = millis();
 
   long distance = getDistance();
 
-  //out of range or lost target
+  // out of range or lost target
 
-  if (distance < 0 || distance > 30) {
+  if (distance < 0 || distance > 30)
+  {
     stopMotors();
-  }  //Too close ! Back up
-  else if (distance < 12) {
+  } // Too close ! Back up
+  else if (distance < 12)
+  {
     backward();
-  }  // perfect distance , just stop and wait
-  else if (distance >= 12 && distance <= 20) {
+  } // perfect distance , just stop and wait
+  else if (distance >= 12 && distance <= 20)
+  {
     stopMotors();
-  }  //target is moving away  follow it
-  else if (distance > 20 && distance <= 30) {
+  } // target is moving away  follow it
+  else if (distance > 20 && distance <= 30)
+  {
     forward();
   }
 }
 
 ///----------------APP Handlers--------
 
-void handleSpecialMode() {
+void handleSpecialMode()
+{
   String path = server.uri();
   String level = server.arg("level");
 
-  if (level == "1") {
-    if (path == "/avoid") currentMode = OBSTACLE;
-    else if (path == "/follow") currentMode = FOLLOW;
-  } else {
-    //if elve is 0, rever back to manual control and stop
+  if (level == "1")
+  {
+    if (path == "/avoid")
+      currentMode = OBSTACLE;
+    else if (path == "/follow")
+      currentMode = FOLLOW;
+  }
+  else
+  {
+    // if elve is 0, rever back to manual control and stop
     currentMode = MANUAL;
     stopMotors();
   }
 
-  //Ensure servo faces forward when changing modes
+  // Ensure servo faces forward when changing modes
   scanServo.write(90);
   Serial.print("APP triggered");
   Serial.print(path);
@@ -208,7 +240,8 @@ void handleSpecialMode() {
   server.send(200, "text/plain", "OK");
 }
 
-void setup() {
+void setup()
+{
   // put your setup code here, to run once:
   Serial.begin(115200);
   pinMode(IN1, OUTPUT);
@@ -218,7 +251,6 @@ void setup() {
 
   ledcAttach(ENA, 1000, 8);
   ledcAttach(ENB, 1000, 8);
-
 
   pinMode(TRIG, OUTPUT);
   pinMode(ECHO, INPUT);
@@ -233,35 +265,35 @@ void setup() {
 
   // way Manual directions
 
-  server.on("/f", []() {
+  server.on("/f", []()
+            {
     currentMode == MANUAL;
     forward();
-    server.send(200);
-  });
-  server.on("/b", []() {
+    server.send(200); });
+  server.on("/b", []()
+            {
     currentMode == MANUAL;
     backward();
-    server.send(200);
-  });
-  server.on("/s", []() {
+    server.send(200); });
+  server.on("/s", []()
+            {
     currentMode == MANUAL;
     stopMotors();
-    server.send(200);
-  });
+    server.send(200); });
 
-  //soft turns (Diagonals)
-  server.on("/l", []() {
+  // soft turns (Diagonals)
+  server.on("/l", []()
+            {
     currentMode == MANUAL;
     Left();
-    server.send(200);
-  });
-  server.on("/r", []() {
+    server.send(200); });
+  server.on("/r", []()
+            {
     currentMode == MANUAL;
     Right();
-    server.send(200);
-  });
+    server.send(200); });
 
-  //special functions
+  // special functions
   server.on("/horn", handleSpecialMode);
   server.on("/track", handleSpecialMode);
   server.on("/avoid", handleSpecialMode);
@@ -270,11 +302,14 @@ void setup() {
   Serial.println("Server started !!");
 }
 
-void loop() {
+void loop()
+{
   // put your main code here, to run repeatedly:
   server.handleClient();
   yield();
 
-  if (currentMode == OBSTACLE) obstacleMode();
-  else if (currentMode == FOLLOW) followMode();
+  if (currentMode == OBSTACLE)
+    obstacleMode();
+  else if (currentMode == FOLLOW)
+    followMode();
 }
