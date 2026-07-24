@@ -1,20 +1,7 @@
 #include <WiFi.h>
-#include <WiFiAP.h>
-#include <WiFiClient.h>
-#include <WiFiGeneric.h>
-#include <WiFiMulti.h>
-#include <WiFiSTA.h>
-#include <WiFiScan.h>
-#include <WiFiServer.h>
-#include <WiFiType.h>
-#include <WiFiUdp.h>
-
-#include <HTTP_Method.h>
-#include <Middlewares.h>
-#include <Uri.h>
 #include <WebServer.h>
-#include <esp_wifi.h>
 #include <ESP32Servo.h>
+#include <esp_wifi.h>
 
 const char *ssid = "rover";
 const char *password = "12345";
@@ -29,6 +16,10 @@ Servo scanServo;
 #define IN3 18
 #define IN4 19
 #define ENB 21
+
+// channels
+//  #define PWM_LEFT 0
+//  #define PWM_RIGHT 1
 
 // ultrasonic
 
@@ -70,14 +61,13 @@ long getDistance()
     return duration * 0.034 / 2;
 }
 
-void setLeft(int spd)
+void setLeft(int speed)
 {
-    ledcWrite(0, spd); // Apply speed to channel 0
+    ledcWrite(ENA, speed);
 }
-
-void setRight(int spd)
+void setRight(int speed)
 {
-    ledcWrite(1, spd); // Apply speed to channel 1
+    ledcWrite(ENB, speed);
 }
 
 // void kickStart() {
@@ -257,13 +247,8 @@ void setup()
     pinMode(IN3, OUTPUT);
     pinMode(IN4, OUTPUT);
 
-    // ledcAttach(ENA, 1000, 8);
-    // ledcAttach(ENB, 1000, 8);
-
     ledcAttach(ENA, 1000, 8);
-    ledcAttachChannel(ENA, 1000, 8, 0); // Attach ENA to channel 0
     ledcAttach(ENB, 1000, 8);
-    ledcAttachChannel(ENB, 1000, 8, 1); // Attach ENB to channel 1
 
     pinMode(TRIG, OUTPUT);
     pinMode(ECHO, INPUT);
@@ -276,27 +261,27 @@ void setup()
     WiFi.softAP(ssid, password);
     WiFi.setSleep(false);
 
-    Serial.print("AP IP Address: ");
+    Serial.println("AP IP Address: ");
     Serial.println(WiFi.softAPIP()); // Usually prints 192.168.4.1
 
     // Way Manual directions with structural string responses
     server.on("/f", []()
               {
     currentMode = MANUAL;
-    Serial.print("forward triggered");
+    Serial.println("forward triggered");
     forward();
     server.send(200, "text/plain", "Moving Forward"); });
     server.on("/b", []()
               {
     currentMode = MANUAL;
     backward();
-    Serial.print("back triggered");
+    Serial.println("back triggered");
     server.send(200, "text/plain", "Moving Backward"); });
     server.on("/s", []()
               {
     currentMode = MANUAL;
     stopMotors();
-    Serial.print("stop triggered");
+    Serial.println("stop triggered");
     server.send(200, "text/plain", "Stopped"); });
 
     // Soft turns (Diagonals)
@@ -304,13 +289,13 @@ void setup()
               {
     currentMode = MANUAL;
     Left();
-    Serial.print("left triggered");
+    Serial.println("left triggered");
     server.send(200, "text/plain", "Turning Left"); });
     server.on("/r", []()
               {
     currentMode = MANUAL;
     Right();
-    Serial.print("right triggered");
+    Serial.println("right triggered");
     server.send(200, "text/plain", "Turning Right"); });
 
     // special functions
