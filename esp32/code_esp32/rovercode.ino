@@ -78,56 +78,6 @@ void setRight(int speed)
 //   setRight(baseSpeed);
 // }
 
-void stopMotors()
-{
-    setLeft(0);
-    setRight(0);
-    digitalWrite(IN1, LOW);
-    digitalWrite(IN2, LOW);
-    digitalWrite(IN3, LOW);
-    digitalWrite(IN4, LOW);
-}
-void forward()
-{
-    // kickStart();
-    digitalWrite(IN1, HIGH);
-    digitalWrite(IN2, LOW);
-    digitalWrite(IN3, HIGH);
-    digitalWrite(IN4, LOW);
-    setLeft(baseSpeed);  // ADD THIS: Apply power to Left wheel
-    setRight(baseSpeed); // ADD THIS: Apply power to Right wheel
-}
-void backward()
-{
-    // kickStart();
-    digitalWrite(IN1, LOW);
-    digitalWrite(IN2, HIGH);
-    digitalWrite(IN3, LOW);
-    digitalWrite(IN4, HIGH);
-    setLeft(baseSpeed);  // ADD THIS: Apply power to Left wheel
-    setRight(baseSpeed); // ADD THIS: Apply power to Right wheel
-}
-void Left()
-{
-
-    digitalWrite(IN1, HIGH);
-    digitalWrite(IN2, LOW);
-    digitalWrite(IN3, LOW);
-    digitalWrite(IN4, HIGH);
-    setLeft(baseSpeed);  // ADD THIS: Apply power to Left wheel
-    setRight(baseSpeed); // ADD THIS: Apply power to Right wheel
-}
-void Right()
-{
-
-    digitalWrite(IN1, LOW);
-    digitalWrite(IN2, HIGH);
-    digitalWrite(IN3, HIGH);
-    digitalWrite(IN4, LOW);
-    setLeft(baseSpeed);  // ADD THIS: Apply power to Left wheel
-    setRight(baseSpeed); // ADD THIS: Apply power to Right wheel
-}
-
 void obstacleMode()
 {
     // prevent spamming the sensor
@@ -317,4 +267,54 @@ void loop()
         obstacleMode();
     else if (currentMode == FOLLOW)
         followMode();
+}
+
+void stopMotors()
+{
+    setLeft(0);
+    setRight(0);
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, LOW);
+    digitalWrite(IN3, LOW);
+    digitalWrite(IN4, LOW);
+}
+void forward()
+{
+    // kickStart();
+    digitalWrite(IN1, HIGH);
+    digitalWrite(IN2, LOW);
+    digitalWrite(IN3, HIGH);
+    digitalWrite(IN4, LOW);
+    setLeft(baseSpeed);  // ADD THIS: Apply power to Left wheel
+    setRight(baseSpeed); // ADD THIS: Apply power to Right wheel
+}
+void backward()
+{
+    // kickStart();
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, HIGH);
+    digitalWrite(IN3, LOW);
+    digitalWrite(IN4, HIGH);
+    setLeft(baseSpeed);  // ADD THIS: Apply power to Left wheel
+    setRight(baseSpeed); // ADD THIS: Apply power to Right wheel
+}
+void Left()
+{
+
+    digitalWrite(IN1, HIGH);
+    digitalWrite(IN2, LOW);
+    digitalWrite(IN3, LOW);
+    digitalWrite(IN4, HIGH);
+    setLeft(baseSpeed);  // ADD THIS: Apply power to Left wheel
+    setRight(baseSpeed); // ADD THIS: Apply power to Right wheel
+}
+void Right()
+{
+
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, HIGH);
+    digitalWrite(IN3, HIGH);
+    digitalWrite(IN4, LOW);
+    setLeft(baseSpeed);  // ADD THIS: Apply power to Left wheel
+    setRight(baseSpeed); // ADD THIS: Apply power to Right wheel
 }
