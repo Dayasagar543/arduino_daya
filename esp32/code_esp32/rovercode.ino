@@ -86,6 +86,7 @@ void obstacleMode()
     lastScanTime = millis();
 
     int front = getDistance();
+    Serial.println(front);
     if (front > 0 && front < 25)
     {
         // stops and moves back slightly
@@ -275,6 +276,7 @@ void stopMotors()
     setRight(0);
     digitalWrite(IN1, LOW);
     digitalWrite(IN2, LOW);
+    Serial.println("stop motors runing motor");
     digitalWrite(IN3, LOW);
     digitalWrite(IN4, LOW);
 }
@@ -283,6 +285,7 @@ void forward()
     // kickStart();
     digitalWrite(IN1, HIGH);
     digitalWrite(IN2, LOW);
+    Serial.println("forward runing motor");
     digitalWrite(IN3, HIGH);
     digitalWrite(IN4, LOW);
     setLeft(baseSpeed);  // ADD THIS: Apply power to Left wheel
@@ -293,6 +296,7 @@ void backward()
     // kickStart();
     digitalWrite(IN1, LOW);
     digitalWrite(IN2, HIGH);
+    Serial.println("backward runing motor");
     digitalWrite(IN3, LOW);
     digitalWrite(IN4, HIGH);
     setLeft(baseSpeed);  // ADD THIS: Apply power to Left wheel
@@ -303,6 +307,7 @@ void Left()
 
     digitalWrite(IN1, HIGH);
     digitalWrite(IN2, LOW);
+    Serial.println("left runing motor");
     digitalWrite(IN3, LOW);
     digitalWrite(IN4, HIGH);
     setLeft(baseSpeed);  // ADD THIS: Apply power to Left wheel
@@ -313,6 +318,7 @@ void Right()
 
     digitalWrite(IN1, LOW);
     digitalWrite(IN2, HIGH);
+    Serial.println("right runing motor");
     digitalWrite(IN3, HIGH);
     digitalWrite(IN4, LOW);
     setLeft(baseSpeed);  // ADD THIS: Apply power to Left wheel
