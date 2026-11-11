@@ -31,3 +31,51 @@
 # Software projects
 10. Flappy bird
 11. Jumping hero
+
+
+
+
+
+## class wise 
+
+5 A:
+blinking led on the arduino
+turning on and off the led using switch 
+ Automatic street lights
+fire alarm
+automatic exhaust
+fire extinguishing system
+
+6D:
+scratch flappy bird game
+jumping heir
+senoros and component showcase and explanation
+truning on and off the LED  using touch sensor
+smart street light
+fire fighter
+blinking led light
+human follower
+magnetic car
+
+7 D:
+describe the arduino and senosrs
+what is the IDE used 
+automatic door
+smart temperature detection system
+smart tap
+soil moisture detection.
+traffice system
+data science dash board
+
+8 E:
+obsticle avoider
+pit avoider
+light following robot
+ligh avoider robot
+bluetooth controlled robot
+data science dashboard
+
+9 E:
+.mars Rover
+ web design
+opencv--computer vision
