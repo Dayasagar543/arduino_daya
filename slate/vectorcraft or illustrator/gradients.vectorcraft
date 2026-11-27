@@ -7,7 +7,7 @@
     "mime": "application/pdf",
     "blob": [
       0,
-      9439
+      10085
     ]
   },
   "document": {
@@ -493,70 +493,75 @@
                               "kind": "Linear",
                               "stops": [
                                 {
-                                  "offset": 0.09016393,
+                                  "offset": 0.0,
                                   "color": {
                                     "model": "cmyk",
-                                    "c": 0.0,
-                                    "m": 0.88,
-                                    "y": 0.85,
-                                    "k": 0.07
+                                    "c": 0.24121377,
+                                    "m": 1.0,
+                                    "y": 0.0,
+                                    "k": 0.0
+                                  },
+                                  "opacity": 1.0,
+                                  "midpoint": 0.42213115
+                                },
+                                {
+                                  "offset": 0.17213115,
+                                  "color": {
+                                    "model": "rgb",
+                                    "r": 0.11552024,
+                                    "g": 0.5139065,
+                                    "b": 0.77990997
                                   },
                                   "opacity": 1.0,
                                   "midpoint": 0.5
                                 },
                                 {
-                                  "offset": 0.7692308,
+                                  "offset": 0.52459013,
                                   "color": {
                                     "model": "cmyk",
-                                    "c": 0.79617393,
-                                    "m": 0.0,
-                                    "y": 0.9130435,
+                                    "c": 0.24121377,
+                                    "m": 1.0,
+                                    "y": 0.0,
                                     "k": 0.0
                                   },
                                   "opacity": 1.0,
-                                  "midpoint": 0.5
+                                  "midpoint": 0.42213115
+                                },
+                                {
+                                  "offset": 0.8360656,
+                                  "color": {
+                                    "model": "cmyk",
+                                    "c": 0.82608694,
+                                    "m": 0.07930434,
+                                    "y": 0.0,
+                                    "k": 0.0
+                                  },
+                                  "opacity": 1.0,
+                                  "midpoint": 0.42213115
+                                },
+                                {
+                                  "offset": 0.9918033,
+                                  "color": {
+                                    "model": "cmyk",
+                                    "c": 0.24121377,
+                                    "m": 1.0,
+                                    "y": 0.0,
+                                    "k": 0.0
+                                  },
+                                  "opacity": 1.0,
+                                  "midpoint": 0.42213115
                                 }
                               ]
                             },
-                            "angle": -87.93618027154302
+                            "angle": 0.0
                           }
                         },
                         {
                           "kind": "stroke",
                           "paint": {
-                            "type": "gradient",
-                            "gradient": {
-                              "kind": "Linear",
-                              "stops": [
-                                {
-                                  "offset": 0.008196721,
-                                  "color": {
-                                    "model": "cmyk",
-                                    "c": 0.0,
-                                    "m": 0.33,
-                                    "y": 0.88,
-                                    "k": 0.03
-                                  },
-                                  "opacity": 1.0,
-                                  "midpoint": 0.5
-                                },
-                                {
-                                  "offset": 1.0,
-                                  "color": {
-                                    "model": "cmyk",
-                                    "c": 0.0,
-                                    "m": 0.88,
-                                    "y": 0.85,
-                                    "k": 0.07
-                                  },
-                                  "opacity": 1.0,
-                                  "midpoint": 0.5
-                                }
-                              ]
-                            },
-                            "angle": 0.0
+                            "type": "none"
                           },
-                          "width": 1.0
+                          "width": 0.0
                         }
                       ]
                     },
@@ -568,26 +573,26 @@
                             "anchors": [
                               {
                                 "p": [
-                                  36.71256987384041,
-                                  272.8402896824039
+                                  24.637697561791697,
+                                  239.53029709744192
                                 ]
                               },
                               {
                                 "p": [
-                                  131.5687976753171,
-                                  279.32690538401914
+                                  119.49392536326837,
+                                  246.01691279905714
                                 ]
                               },
                               {
                                 "p": [
-                                  130.642138289372,
-                                  412.17616800924213
+                                  118.5672659773233,
+                                  378.86617542428013
                                 ]
                               },
                               {
                                 "p": [
-                                  35.785910487895336,
-                                  405.68955230762685
+                                  23.711038175846625,
+                                  372.37955972266485
                                 ]
                               }
                             ],
@@ -612,25 +617,60 @@
                                   "offset": 0.0,
                                   "color": {
                                     "model": "cmyk",
-                                    "c": 0.0,
-                                    "m": 0.33,
-                                    "y": 0.88,
-                                    "k": 0.03
+                                    "c": 0.24121377,
+                                    "m": 1.0,
+                                    "y": 0.0,
+                                    "k": 0.0
+                                  },
+                                  "opacity": 1.0,
+                                  "midpoint": 0.42213115
+                                },
+                                {
+                                  "offset": 0.17213115,
+                                  "color": {
+                                    "model": "rgb",
+                                    "r": 0.11552024,
+                                    "g": 0.5139065,
+                                    "b": 0.77990997
                                   },
                                   "opacity": 1.0,
                                   "midpoint": 0.5
                                 },
                                 {
-                                  "offset": 1.0,
+                                  "offset": 0.52459013,
                                   "color": {
                                     "model": "cmyk",
-                                    "c": 0.0,
-                                    "m": 0.88,
-                                    "y": 0.85,
-                                    "k": 0.07
+                                    "c": 0.24121377,
+                                    "m": 1.0,
+                                    "y": 0.0,
+                                    "k": 0.0
                                   },
                                   "opacity": 1.0,
-                                  "midpoint": 0.5
+                                  "midpoint": 0.42213115
+                                },
+                                {
+                                  "offset": 0.8360656,
+                                  "color": {
+                                    "model": "cmyk",
+                                    "c": 0.82608694,
+                                    "m": 0.07930434,
+                                    "y": 0.0,
+                                    "k": 0.0
+                                  },
+                                  "opacity": 1.0,
+                                  "midpoint": 0.42213115
+                                },
+                                {
+                                  "offset": 0.9918033,
+                                  "color": {
+                                    "model": "cmyk",
+                                    "c": 0.24121377,
+                                    "m": 1.0,
+                                    "y": 0.0,
+                                    "k": 0.0
+                                  },
+                                  "opacity": 1.0,
+                                  "midpoint": 0.42213115
                                 }
                               ]
                             },
@@ -640,39 +680,9 @@
                         {
                           "kind": "stroke",
                           "paint": {
-                            "type": "gradient",
-                            "gradient": {
-                              "kind": "Linear",
-                              "stops": [
-                                {
-                                  "offset": 0.09016393,
-                                  "color": {
-                                    "model": "cmyk",
-                                    "c": 0.0,
-                                    "m": 0.88,
-                                    "y": 0.85,
-                                    "k": 0.07
-                                  },
-                                  "opacity": 1.0,
-                                  "midpoint": 0.5
-                                },
-                                {
-                                  "offset": 0.7692308,
-                                  "color": {
-                                    "model": "cmyk",
-                                    "c": 0.79617393,
-                                    "m": 0.0,
-                                    "y": 0.9130435,
-                                    "k": 0.0
-                                  },
-                                  "opacity": 1.0,
-                                  "midpoint": 0.5
-                                }
-                              ]
-                            },
-                            "angle": -87.93618027154302
+                            "type": "none"
                           },
-                          "width": 1.0
+                          "width": 0.0
                         }
                       ]
                     },
@@ -684,26 +694,26 @@
                             "anchors": [
                               {
                                 "p": [
-                                  131.5687976753171,
-                                  279.32690538401914
+                                  119.49392536326837,
+                                  246.01691279905714
                                 ]
                               },
                               {
                                 "p": [
-                                  177.63540698215903,
-                                  252.68687209655457
+                                  165.56053467011031,
+                                  219.37687951159256
                                 ]
                               },
                               {
                                 "p": [
-                                  177.64419406688253,
-                                  384.52789990482404
+                                  165.56932175483382,
+                                  351.21790731986204
                                 ]
                               },
                               {
                                 "p": [
-                                  130.642138289372,
-                                  410.79375460402116
+                                  118.5672659773233,
+                                  377.48376201905916
                                 ]
                               }
                             ],
@@ -725,70 +735,75 @@
                               "kind": "Linear",
                               "stops": [
                                 {
-                                  "offset": 0.09016393,
+                                  "offset": 0.0,
                                   "color": {
                                     "model": "cmyk",
-                                    "c": 0.0,
-                                    "m": 0.88,
-                                    "y": 0.85,
-                                    "k": 0.07
+                                    "c": 0.24121377,
+                                    "m": 1.0,
+                                    "y": 0.0,
+                                    "k": 0.0
+                                  },
+                                  "opacity": 1.0,
+                                  "midpoint": 0.42213115
+                                },
+                                {
+                                  "offset": 0.17213115,
+                                  "color": {
+                                    "model": "rgb",
+                                    "r": 0.11552024,
+                                    "g": 0.5139065,
+                                    "b": 0.77990997
                                   },
                                   "opacity": 1.0,
                                   "midpoint": 0.5
                                 },
                                 {
-                                  "offset": 0.7692308,
+                                  "offset": 0.52459013,
                                   "color": {
                                     "model": "cmyk",
-                                    "c": 0.79617393,
-                                    "m": 0.0,
-                                    "y": 0.9130435,
+                                    "c": 0.24121377,
+                                    "m": 1.0,
+                                    "y": 0.0,
                                     "k": 0.0
                                   },
                                   "opacity": 1.0,
-                                  "midpoint": 0.5
+                                  "midpoint": 0.42213115
+                                },
+                                {
+                                  "offset": 0.8360656,
+                                  "color": {
+                                    "model": "cmyk",
+                                    "c": 0.82608694,
+                                    "m": 0.07930434,
+                                    "y": 0.0,
+                                    "k": 0.0
+                                  },
+                                  "opacity": 1.0,
+                                  "midpoint": 0.42213115
+                                },
+                                {
+                                  "offset": 0.9918033,
+                                  "color": {
+                                    "model": "cmyk",
+                                    "c": 0.24121377,
+                                    "m": 1.0,
+                                    "y": 0.0,
+                                    "k": 0.0
+                                  },
+                                  "opacity": 1.0,
+                                  "midpoint": 0.42213115
                                 }
                               ]
                             },
-                            "angle": -87.93618027154302
+                            "angle": 0.0
                           }
                         },
                         {
                           "kind": "stroke",
                           "paint": {
-                            "type": "gradient",
-                            "gradient": {
-                              "kind": "Linear",
-                              "stops": [
-                                {
-                                  "offset": 0.008196721,
-                                  "color": {
-                                    "model": "cmyk",
-                                    "c": 0.0,
-                                    "m": 0.33,
-                                    "y": 0.88,
-                                    "k": 0.03
-                                  },
-                                  "opacity": 1.0,
-                                  "midpoint": 0.5
-                                },
-                                {
-                                  "offset": 1.0,
-                                  "color": {
-                                    "model": "cmyk",
-                                    "c": 0.0,
-                                    "m": 0.88,
-                                    "y": 0.85,
-                                    "k": 0.07
-                                  },
-                                  "opacity": 1.0,
-                                  "midpoint": 0.5
-                                }
-                              ]
-                            },
-                            "angle": 0.0
+                            "type": "none"
                           },
-                          "width": 1.0
+                          "width": 0.0
                         }
                       ]
                     },
@@ -800,26 +815,26 @@
                             "anchors": [
                               {
                                 "p": [
-                                  82.77917918068235,
-                                  246.20025639493934
+                                  70.70430686863364,
+                                  212.89026380997734
                                 ]
                               },
                               {
                                 "p": [
-                                  177.63540698215903,
-                                  252.68687209655457
+                                  165.56053467011031,
+                                  219.37687951159256
                                 ]
                               },
                               {
                                 "p": [
-                                  131.5687976753171,
-                                  279.32690538401914
+                                  119.49392536326837,
+                                  246.01691279905714
                                 ]
                               },
                               {
                                 "p": [
-                                  36.71256987384041,
-                                  272.8402896824039
+                                  24.637697561791697,
+                                  239.53029709744192
                                 ]
                               }
                             ],
@@ -1477,6 +1492,79 @@
         },
         "global": false,
         "spot": false
+      },
+      {
+        "name": "blue_purple",
+        "paint": {
+          "type": "gradient",
+          "gradient": {
+            "kind": "Linear",
+            "stops": [
+              {
+                "offset": 0.0,
+                "color": {
+                  "model": "cmyk",
+                  "c": 0.24121377,
+                  "m": 1.0,
+                  "y": 0.0,
+                  "k": 0.0
+                },
+                "opacity": 1.0,
+                "midpoint": 0.42213115
+              },
+              {
+                "offset": 0.17213115,
+                "color": {
+                  "model": "rgb",
+                  "r": 0.11552024,
+                  "g": 0.5139065,
+                  "b": 0.77990997
+                },
+                "opacity": 1.0,
+                "midpoint": 0.5
+              },
+              {
+                "offset": 0.52459013,
+                "color": {
+                  "model": "cmyk",
+                  "c": 0.24121377,
+                  "m": 1.0,
+                  "y": 0.0,
+                  "k": 0.0
+                },
+                "opacity": 1.0,
+                "midpoint": 0.42213115
+              },
+              {
+                "offset": 0.8360656,
+                "color": {
+                  "model": "cmyk",
+                  "c": 0.82608694,
+                  "m": 0.07930434,
+                  "y": 0.0,
+                  "k": 0.0
+                },
+                "opacity": 1.0,
+                "midpoint": 0.42213115
+              },
+              {
+                "offset": 0.9918033,
+                "color": {
+                  "model": "cmyk",
+                  "c": 0.24121377,
+                  "m": 1.0,
+                  "y": 0.0,
+                  "k": 0.0
+                },
+                "opacity": 1.0,
+                "midpoint": 0.42213115
+              }
+            ]
+          },
+          "angle": 0.0
+        },
+        "global": false,
+        "spot": false
       }
     ],
     "swatch_groups": [
@@ -1814,7 +1902,7 @@
     },
     "raster_effects_ppi": 300.0,
     "images": {},
-    "next_id": 9,
+    "next_id": 10,
     "metadata": {
       "author": "",
       "authorTitle": "",
@@ -1825,15 +1913,15 @@
       "copyrightNotice": "",
       "copyrightUrl": "",
       "created": 1795664021,
-      "modified": 1795667428
+      "modified": 1795691874
     },
     "last_view": {
       "name": "",
       "center": {
-        "x": 187.83293695737996,
-        "y": 309.9587561689482
+        "x": 297.6377952755906,
+        "y": 420.94488188976385
       },
-      "zoom": 2.401681711454852,
+      "zoom": 0.7233726150392816,
       "rotation": 0.0
     }
   },
@@ -1843,10 +1931,10 @@
 %ÄÄÄÄ
 
 1 0 obj
-<</Type/Pages/Count 1/Kids[49 0 R]>>
+<</Type/Pages/Count 1/Kids[51 0 R]>>
 endobj
 2 0 obj
-<</ProcSet[/PDF/Text/ImageC/ImageB]/Pattern<</p0 40 0 R/p1 41 0 R/p2 42 0 R/p3 43 0 R/p4 44 0 R/p5 45 0 R/p6 46 0 R/p7 47 0 R/p8 48 0 R>>>>
+<</ProcSet[/PDF/Text/ImageC/ImageB]/Pattern<</p0 45 0 R/p1 46 0 R/p2 47 0 R/p3 48 0 R/p4 49 0 R/p5 50 0 R>>>>
 endobj
 3 0 obj
 <</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0 0.91 0 0]/C1[0 0.24 0.95652175 0]/Domain[0 1]/N 1>>
@@ -1885,189 +1973,195 @@ endobj
 <</ShadingType 3/ColorSpace/DeviceCMYK/AntiAlias false/Function 13 0 R/Coords[399.50104 80.8676 0 399.50104 80.8676 91.45901]/Extend[true true]>>
 endobj
 15 0 obj
-<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0 0.88 0.85 0.07]/C1[0 0.88 0.85 0.07]/Domain[0 1]/N 1>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.24121377 1 0 0]/C1[0.6918433 0.8153968 0 0]/Domain[0 1]/N 1>>
 endobj
 16 0 obj
-<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0 0.88 0.85 0.07]/C1[0.79617393 0 0.9130435 0]/Domain[0 1]/N 1>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.6918433 0.8153968 0 0]/C1[0.81807745 0.42167038 0 0]/Domain[0 1]/N 1>>
 endobj
 17 0 obj
-<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.79617393 0 0.9130435 0]/C1[0.79617393 0 0.9130435 0]/Domain[0 1]/N 1>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.81807745 0.42167038 0 0]/C1[0.24121377 1 0 0]/Domain[0 1]/N 1>>
 endobj
 18 0 obj
-<</FunctionType 3/Domain[0 1]/Range[0 1 0 1 0 1 0 1]/Functions[15 0 R 16 0 R 17 0 R]/Bounds[0.09016393 0.7692308]/Encode[0 1 0 1 0 1]>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.24121377 1 0 0]/C1[0.73912346 0.6738999 0 0]/Domain[0 1]/N 1>>
 endobj
 19 0 obj
-<</ShadingType 2/ColorSpace/DeviceCMYK/AntiAlias false/Function 18 0 R/Coords[81.10794 271.20706 86.246765 413.8094]/Extend[true true]>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.73912346 0.6738999 0 0]/C1[0.82608694 0.07930434 0 0]/Domain[0 1]/N 1>>
 endobj
 20 0 obj
-<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0 0.33 0.88 0.03]/C1[0 0.33 0.88 0.03]/Domain[0 1]/N 1>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.82608694 0.07930434 0 0]/C1[0.7390839 0.6738717 0 0]/Domain[0 1]/N 1>>
 endobj
 21 0 obj
-<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0 0.33 0.88 0.03]/C1[0 0.88 0.85 0.07]/Domain[0 1]/N 1>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.7390839 0.6738717 0 0]/C1[0.24121377 1 0 0]/Domain[0 1]/N 1>>
 endobj
 22 0 obj
-<</FunctionType 3/Domain[0 1]/Range[0 1 0 1 0 1 0 1]/Functions[20 0 R 21 0 R]/Bounds[0.008196721]/Encode[0 1 0 1]>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.24121377 1 0 0]/C1[0.24121377 1 0 0]/Domain[0 1]/N 1>>
 endobj
 23 0 obj
-<</ShadingType 2/ColorSpace/DeviceCMYK/AntiAlias false/Function 22 0 R/Coords[35.28591 342.50824 132.0688 342.50824]/Extend[true true]>>
+<</FunctionType 3/Domain[0 1]/Range[0 1 0 1 0 1 0 1]/Functions[15 0 R 16 0 R 17 0 R 18 0 R 19 0 R 20 0 R 21 0 R 22 0 R]/Bounds[0.07266192 0.17213115 0.52459013 0.65607363 0.8360656 0.9018073 0.9918033]/Encode[0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1]>>
 endobj
 24 0 obj
-<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0 0.33 0.88 0.03]/C1[0 0.88 0.85 0.07]/Domain[0 1]/N 1>>
+<</ShadingType 2/ColorSpace/DeviceCMYK/AntiAlias false/Function 23 0 R/Coords[23.711039 309.19824 119.49393 309.19824]/Extend[true true]>>
 endobj
 25 0 obj
-<</ShadingType 2/ColorSpace/DeviceCMYK/AntiAlias false/Function 24 0 R/Coords[130.64214 331.74033 177.6442 331.74033]/Extend[true true]>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.24121377 1 0 0]/C1[0.6918433 0.8153968 0 0]/Domain[0 1]/N 1>>
 endobj
 26 0 obj
-<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0 0.88 0.85 0.07]/C1[0 0.88 0.85 0.07]/Domain[0 1]/N 1>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.6918433 0.8153968 0 0]/C1[0.81807745 0.42167038 0 0]/Domain[0 1]/N 1>>
 endobj
 27 0 obj
-<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0 0.88 0.85 0.07]/C1[0.79617393 0 0.9130435 0]/Domain[0 1]/N 1>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.81807745 0.42167038 0 0]/C1[0.24121377 1 0 0]/Domain[0 1]/N 1>>
 endobj
 28 0 obj
-<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.79617393 0 0.9130435 0]/C1[0.79617393 0 0.9130435 0]/Domain[0 1]/N 1>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.24121377 1 0 0]/C1[0.73912346 0.6738999 0 0]/Domain[0 1]/N 1>>
 endobj
 29 0 obj
-<</FunctionType 3/Domain[0 1]/Range[0 1 0 1 0 1 0 1]/Functions[26 0 R 27 0 R 28 0 R]/Bounds[0.09016393 0.7692308]/Encode[0 1 0 1 0 1]>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.73912346 0.6738999 0 0]/C1[0.82608694 0.07930434 0 0]/Domain[0 1]/N 1>>
 endobj
 30 0 obj
-<</ShadingType 2/ColorSpace/DeviceCMYK/AntiAlias false/Function 29 0 R/Coords[151.24896 251.42627 157.03737 412.05435]/Extend[true true]>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.82608694 0.07930434 0 0]/C1[0.7390839 0.6738717 0 0]/Domain[0 1]/N 1>>
 endobj
 31 0 obj
-<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0 0.88 0.85 0.07]/C1[0 0.88 0.85 0.07]/Domain[0 1]/N 1>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.7390839 0.6738717 0 0]/C1[0.24121377 1 0 0]/Domain[0 1]/N 1>>
 endobj
 32 0 obj
-<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0 0.88 0.85 0.07]/C1[0.79617393 0 0.9130435 0]/Domain[0 1]/N 1>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.24121377 1 0 0]/C1[0.24121377 1 0 0]/Domain[0 1]/N 1>>
 endobj
 33 0 obj
-<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.79617393 0 0.9130435 0]/C1[0.79617393 0 0.9130435 0]/Domain[0 1]/N 1>>
+<</FunctionType 3/Domain[0 1]/Range[0 1 0 1 0 1 0 1]/Functions[25 0 R 26 0 R 27 0 R 28 0 R 29 0 R 30 0 R 31 0 R 32 0 R]/Bounds[0.07266192 0.17213115 0.52459013 0.65607363 0.8360656 0.9018073 0.9918033]/Encode[0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1]>>
 endobj
 34 0 obj
-<</FunctionType 3/Domain[0 1]/Range[0 1 0 1 0 1 0 1]/Functions[31 0 R 32 0 R 33 0 R]/Bounds[0.09016393 0.7692308]/Encode[0 1 0 1 0 1]>>
+<</ShadingType 2/ColorSpace/DeviceCMYK/AntiAlias false/Function 33 0 R/Coords[118.56727 298.43033 165.56932 298.43033]/Extend[true true]>>
 endobj
 35 0 obj
-<</ShadingType 2/ColorSpace/DeviceCMYK/AntiAlias false/Function 34 0 R/Coords[106.4865 243.68588 107.86147 281.84128]/Extend[true true]>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.24121377 1 0 0]/C1[0.6918433 0.8153968 0 0]/Domain[0 1]/N 1>>
 endobj
 36 0 obj
-<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0 0.33 0.88 0.03]/C1[0 0.33 0.88 0.03]/Domain[0 1]/N 1>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.6918433 0.8153968 0 0]/C1[0.81807745 0.42167038 0 0]/Domain[0 1]/N 1>>
 endobj
 37 0 obj
-<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0 0.33 0.88 0.03]/C1[0 0.88 0.85 0.07]/Domain[0 1]/N 1>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.81807745 0.42167038 0 0]/C1[0.24121377 1 0 0]/Domain[0 1]/N 1>>
 endobj
 38 0 obj
-<</FunctionType 3/Domain[0 1]/Range[0 1 0 1 0 1 0 1]/Functions[36 0 R 37 0 R]/Bounds[0.008196721]/Encode[0 1 0 1]>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.24121377 1 0 0]/C1[0.73912346 0.6738999 0 0]/Domain[0 1]/N 1>>
 endobj
 39 0 obj
-<</ShadingType 2/ColorSpace/DeviceCMYK/AntiAlias false/Function 38 0 R/Coords[36.21257 262.76358 178.1354 262.76358]/Extend[true true]>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.73912346 0.6738999 0 0]/C1[0.82608694 0.07930434 0 0]/Domain[0 1]/N 1>>
 endobj
 40 0 obj
-<</Type/Pattern/PatternType 2/Shading 4 0 R/Matrix[1 0 0 -1 0 841.8898]>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.82608694 0.07930434 0 0]/C1[0.7390839 0.6738717 0 0]/Domain[0 1]/N 1>>
 endobj
 41 0 obj
-<</Type/Pattern/PatternType 2/Shading 9 0 R/Matrix[0.9999957 0.0012276209 -0.0012276209 -0.6509147 0.14544421 800.5314]>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.7390839 0.6738717 0 0]/C1[0.24121377 1 0 0]/Domain[0 1]/N 1>>
 endobj
 42 0 obj
-<</Type/Pattern/PatternType 2/Shading 14 0 R/Matrix[0.887084 -0.16871929 0.16871929 -0.7478993 31.466125 888.9065]>>
+<</FunctionType 2/Range[0 1 0 1 0 1 0 1]/C0[0.24121377 1 0 0]/C1[0.24121377 1 0 0]/Domain[0 1]/N 1>>
 endobj
 43 0 obj
-<</Type/Pattern/PatternType 2/Shading 19 0 R/Matrix[1 0 0 -1 0 841.8898]>>
+<</FunctionType 3/Domain[0 1]/Range[0 1 0 1 0 1 0 1]/Functions[35 0 R 36 0 R 37 0 R 38 0 R 39 0 R 40 0 R 41 0 R 42 0 R]/Bounds[0.07266192 0.17213115 0.52459013 0.65607363 0.8360656 0.9018073 0.9918033]/Encode[0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1]>>
 endobj
 44 0 obj
-<</Type/Pattern/PatternType 2/Shading 23 0 R/Matrix[1 0 0 -1 0 841.8898]>>
+<</ShadingType 2/ColorSpace/DeviceCMYK/AntiAlias false/Function 43 0 R/Coords[24.637697 229.45358 165.56053 229.45358]/Extend[true true]>>
 endobj
 45 0 obj
-<</Type/Pattern/PatternType 2/Shading 25 0 R/Matrix[1 0 0 -1 0 841.8898]>>
+<</Type/Pattern/PatternType 2/Shading 4 0 R/Matrix[1 0 0 -1 0 841.8898]>>
 endobj
 46 0 obj
-<</Type/Pattern/PatternType 2/Shading 30 0 R/Matrix[1 0 0 -1 0 841.8898]>>
+<</Type/Pattern/PatternType 2/Shading 9 0 R/Matrix[0.9999957 0.0012276209 -0.0012276209 -0.6509147 0.14544421 800.5314]>>
 endobj
 47 0 obj
-<</Type/Pattern/PatternType 2/Shading 35 0 R/Matrix[1 0 0 -1 0 841.8898]>>
+<</Type/Pattern/PatternType 2/Shading 14 0 R/Matrix[0.887084 -0.16871929 0.16871929 -0.7478993 31.466125 888.9065]>>
 endobj
 48 0 obj
-<</Type/Pattern/PatternType 2/Shading 39 0 R/Matrix[1 0 0 -1 0 841.8898]>>
+<</Type/Pattern/PatternType 2/Shading 24 0 R/Matrix[1 0 0 -1 0 841.8898]>>
 endobj
 49 0 obj
-<</Type/Page/Resources 2 0 R/MediaBox[0 0 595.2756 841.8898]/BleedBox[0 0 595.2756 841.8898]/TrimBox[0 0 595.2756 841.8898]/Parent 1 0 R/Contents 50 0 R>>
+<</Type/Pattern/PatternType 2/Shading 34 0 R/Matrix[1 0 0 -1 0 841.8898]>>
 endobj
 50 0 obj
-<</Length 472/Filter/FlateDecode>>
-stream
-xúÌïMjAÖ˜s
-] ˝Kµˆ2bÊ°I»¬cÏÿ˜'T¶*q;ô3+Ø∫˘Ëzzz•ÆzÇO˝Q∆X’
-ñ„˛Î∑ÁÁÔøÓay⁄?<-˜†Y¬™¿fDï¡8Étbw'∆Ÿ0Y”·nZΩMßıªüªª€›„÷Ä0-”#Kî¨øESÒÊ@ÿà≤µ¶˘™ûˇ¸Gúº∆)HÈ∆¿úË‰‹≠ZÑÂYbÇ≠U:8#[ì (L6°îöÈDU’\sË4
-/3uCv±úπ+®’®<–2Yú>˝ù∑z^ﬁqª?2ôû=éÚÚwgO“˚P≤H*,F"—#¬`tÂ§”D	võÿñäç™r¢Nä¡iCÔDFŸeÇŒ(¶îì⁄¯G›¡ñ…·†£πì‡FøÔ9âq^6Ñ˙2ÑÅ…‚	íÇe‘gêï—£˙…”P%Z?¨ï0Lÿ¿Xê3∏˙¡ÏòÂç¡»1™y?◊_K˛Ô~9˘∫9Ï7_ÆÁÎÏº|ÕÎµá~π%Ü∫Å∏`TTÆ∑[bò	h∫‰ﬂf	≥i∆J_µuI^±Êu5_gÁïk^%òŸ∏@,Pà$ﬁ4∂±ª[∂•xQ^µÊu5_á›Ìo®∂˙
-endstream
+<</Type/Pattern/PatternType 2/Shading 44 0 R/Matrix[1 0 0 -1 0 841.8898]>>
 endobj
 51 0 obj
-<</Title(Untitled-1)/Creator(VectorCraft)/Producer(VectorCraft)/ModDate(D:20261126043028Z)/CreationDate(D:20261126033341Z)>>
+<</Type/Page/Resources 2 0 R/MediaBox[0 0 595.2756 841.8898]/BleedBox[0 0 595.2756 841.8898]/TrimBox[0 0 595.2756 841.8898]/Parent 1 0 R/Contents 52 0 R>>
 endobj
 52 0 obj
-<</Length 1060/Type/Metadata/Subtype/XML>>
+<</Length 440/Filter/FlateDecode>>
 stream
-<?xpacket begin="Ôªø" id="W5M0MpCehiHzreSzNTczkc9d"?><x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="xmp-writer"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:xmp="http://ns.adobe.com/xap/1.0/"  xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"  xmlns:xmpTPg="http://ns.adobe.com/xap/1.0/t/pg/"  xmlns:pdf="http://ns.adobe.com/pdf/1.3/" ><dc:title><rdf:Alt><rdf:li xml:lang="x-default">Untitled-1</rdf:li></rdf:Alt></dc:title><xmp:CreatorTool>VectorCraft</xmp:CreatorTool><pdf:Producer>VectorCraft</pdf:Producer><xmp:ModifyDate>2026-11-26T04:30:28+00:00</xmp:ModifyDate><xmp:CreateDate>2026-11-26T03:33:41+00:00</xmp:CreateDate><xmpTPg:NPages>1</xmpTPg:NPages><dc:format>application/pdf</dc:format><xmpMM:InstanceID>n+/SsRJLJLYxbeEEFrnHwA==</xmpMM:InstanceID><xmpMM:DocumentID>n+/SsRJLJLYxbeEEFrnHwA==</xmpMM:DocumentID><xmpMM:RenditionClass>default</xmpMM:RenditionClass><pdf:PDFVersion>1.7</pdf:PDFVersion></rdf:Description></rdf:RDF></x:xmpmeta><?xpacket end="r"?>
+xúÌïMn1Ö˜sä∫ ï˙ˇ9'@-ãôàê‹_ëg–ÿÅ)bïU∑>µ_Ωz.ªÔÄÅÄ‡›xî1Vu¡v∫˘˘··Àè[ÿÓoæ‹o∑†ç,aU`çQepN√ ]ÿÒ 8ì5éÀÍ}∫¨?|;|=|<‹=c”2]Å0≤D…∆[¥ä∑aew+ºˇØû?˝¡Ûì8˘ßp •s¢ìÛ∞6iñg	à	vW:8#[KH
+ì-h•F!]®j†ökNΩâf·m•n».ñã óbuÕ mã≈Â√ŸﬂUpØÁÌ∑˚-”ôÈ?è£\Nwé$}E ã§¬i¬b$-0"6QpAWN*0Mî`∑Öm`©ÿTïuRNõzW2ÀntF1•\‘ÊQúu'€áìŒÊÆÇ;˝æÊ$æ≈˘≤!‘Àùhö—	¢çÆ4Üêπ—Z[A,ê8z\◊\Ëë26≤∞"∏‡¢òÃ§öÇöÌ„¬ﬁQ˝€?Êâ7;{€±qGr·FÕ®a„B[tÃÁØé≠4„LoÓ%ﬁ¸Ï-	ìLÑ´I‚yo{iÓ%¥'˙”⁄#∏¡Ø†
 endstream
 endobj
 53 0 obj
-<</Type/Catalog/Pages 1 0 R/Metadata 52 0 R>>
+<</Title(Untitled-1)/Creator(VectorCraft)/Producer(VectorCraft)/ModDate(D:20261126111754Z)/CreationDate(D:20261126033341Z)>>
+endobj
+54 0 obj
+<</Length 1060/Type/Metadata/Subtype/XML>>
+stream
+<?xpacket begin="Ôªø" id="W5M0MpCehiHzreSzNTczkc9d"?><x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="xmp-writer"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:xmp="http://ns.adobe.com/xap/1.0/"  xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"  xmlns:xmpTPg="http://ns.adobe.com/xap/1.0/t/pg/"  xmlns:pdf="http://ns.adobe.com/pdf/1.3/" ><dc:title><rdf:Alt><rdf:li xml:lang="x-default">Untitled-1</rdf:li></rdf:Alt></dc:title><xmp:CreatorTool>VectorCraft</xmp:CreatorTool><pdf:Producer>VectorCraft</pdf:Producer><xmp:ModifyDate>2026-11-26T11:17:54+00:00</xmp:ModifyDate><xmp:CreateDate>2026-11-26T03:33:41+00:00</xmp:CreateDate><xmpTPg:NPages>1</xmpTPg:NPages><dc:format>application/pdf</dc:format><xmpMM:InstanceID>npte5GQf19+c8V6s+XHlUw==</xmpMM:InstanceID><xmpMM:DocumentID>npte5GQf19+c8V6s+XHlUw==</xmpMM:DocumentID><xmpMM:RenditionClass>default</xmpMM:RenditionClass><pdf:PDFVersion>1.7</pdf:PDFVersion></rdf:Description></rdf:RDF></x:xmpmeta><?xpacket end="r"?>
+endstream
+endobj
+55 0 obj
+<</Type/Catalog/Pages 1 0 R/Metadata 54 0 R>>
 endobj
 xref
-0 54
+0 56
 0000000000 65535 f
 0000000016 00000 n
 0000000068 00000 n
-0000000223 00000 n
-0000000336 00000 n
-0000000489 00000 n
-0000000623 00000 n
-0000000756 00000 n
-0000000888 00000 n
-0000001036 00000 n
-0000001200 00000 n
-0000001335 00000 n
-0000001469 00000 n
-0000001602 00000 n
-0000001754 00000 n
-0000001916 00000 n
-0000002033 00000 n
-0000002158 00000 n
-0000002291 00000 n
-0000002443 00000 n
-0000002596 00000 n
-0000002713 00000 n
-0000002830 00000 n
-0000002962 00000 n
-0000003115 00000 n
-0000003232 00000 n
-0000003386 00000 n
-0000003503 00000 n
-0000003628 00000 n
-0000003761 00000 n
-0000003913 00000 n
-0000004068 00000 n
-0000004185 00000 n
-0000004310 00000 n
-0000004443 00000 n
-0000004595 00000 n
-0000004749 00000 n
-0000004866 00000 n
-0000004983 00000 n
-0000005115 00000 n
-0000005268 00000 n
-0000005358 00000 n
-0000005496 00000 n
-0000005629 00000 n
-0000005720 00000 n
-0000005811 00000 n
-0000005902 00000 n
-0000005993 00000 n
-0000006084 00000 n
-0000006175 00000 n
-0000006346 00000 n
-0000006887 00000 n
-0000007028 00000 n
-0000008165 00000 n
+0000000193 00000 n
+0000000306 00000 n
+0000000459 00000 n
+0000000593 00000 n
+0000000726 00000 n
+0000000858 00000 n
+0000001006 00000 n
+0000001170 00000 n
+0000001305 00000 n
+0000001439 00000 n
+0000001572 00000 n
+0000001724 00000 n
+0000001886 00000 n
+0000002010 00000 n
+0000002143 00000 n
+0000002269 00000 n
+0000002394 00000 n
+0000002528 00000 n
+0000002661 00000 n
+0000002785 00000 n
+0000002902 00000 n
+0000003162 00000 n
+0000003317 00000 n
+0000003441 00000 n
+0000003574 00000 n
+0000003700 00000 n
+0000003825 00000 n
+0000003959 00000 n
+0000004092 00000 n
+0000004216 00000 n
+0000004333 00000 n
+0000004593 00000 n
+0000004748 00000 n
+0000004872 00000 n
+0000005005 00000 n
+0000005131 00000 n
+0000005256 00000 n
+0000005390 00000 n
+0000005523 00000 n
+0000005647 00000 n
+0000005764 00000 n
+0000006024 00000 n
+0000006179 00000 n
+0000006269 00000 n
+0000006407 00000 n
+0000006540 00000 n
+0000006631 00000 n
+0000006722 00000 n
+0000006813 00000 n
+0000006984 00000 n
+0000007493 00000 n
+0000007634 00000 n
+0000008771 00000 n
 trailer
-<</Size 54/Root 53 0 R/Info 51 0 R/ID[(n+/SsRJLJLYxbeEEFrnHwA==)(n+/SsRJLJLYxbeEEFrnHwA==)]>>
+<</Size 56/Root 55 0 R/Info 53 0 R/ID[(npte5GQf19+c8V6s+XHlUw==)(npte5GQf19+c8V6s+XHlUw==)]>>
 startxref
-8227
+8833
 %%EOF
